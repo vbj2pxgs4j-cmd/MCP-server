@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Customer Pulse — AI Executive Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Top Navigation -->
+    <header class="navbar">
+      <div class="brand-section">
+        <div class="brand-logo">⚡</div>
+        <div>
+          <div class="brand-title">
+            Customer Pulse AI
+            <span class="brand-tag">MCP Autonomous Agent</span>
+          </div>
+          <div class="brand-subtitle">Automated Play Store Feedback & Action Synthesizer</div>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="btn btn-icon" title="Toggle Theme">☀️</button>
+        <button id="refresh-btn" class="btn btn-secondary">🔄 Refresh</button>
+        <button id="trigger-all-btn" class="btn btn-primary">🚀 Run Full Pipeline</button>
+      </div>
+    </header>
+
+    <!-- Executive Brief Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-meta">
+        <span class="pulse-badge">
+          <span class="pulse-dot"></span>
+          Live Synthesis
+        </span>
+        <span style="font-size: 0.85rem; color: var(--text-secondary);">App: <strong>Groww</strong> (Google Play Store) &bull; Ref Date: Sep 15, 2026</span>
+      </div>
+      <h1 class="hero-title">Executive Customer Sentiment & Product Pulse</h1>
+      <p class="hero-summary">
+        Autonomous LLM synthesis extracted high-frequency pain points across onboarding verification, bank withdrawal settlement, and market-open option charts, paired with high-impact engineering resolutions.
+      </p>
+
+      <div class="hero-highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon">🚨</div>
+          <div>
+            <div class="highlight-title">Top Friction Vector</div>
+            <div class="highlight-desc">KYC SLA delays exceeding 6+ business days blocking user deposits.</div>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">💳</div>
+          <div>
+            <div class="highlight-title">Financial Settlement Risk</div>
+            <div class="highlight-desc">Bank withdrawal dropped state issues causing repetitive escalations.</div>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">✨</div>
+          <div>
+            <div class="highlight-title">Key Delight Factor</div>
+            <div class="highlight-desc">1-click UPI autopay Mutual Fund SIP setup receiving consistent 5-star praise.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Row -->
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-header">
+          <span class="metric-label">Reviews Analyzed</span>
+          <span class="metric-badge" style="background: rgba(99, 102, 241, 0.15); color: #818cf8;">Last 7 Days</span>
+        </div>
+        <div id="metric-reviews" class="metric-value">19</div>
+        <div class="metric-subtext">Scraped & normalized via Play Store API</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <span class="metric-label">Average Sentiment</span>
+          <span class="metric-badge" style="background: rgba(244, 63, 94, 0.15); color: #fb7185;">Critical Alert</span>
+        </div>
+        <div id="metric-rating" class="metric-value">1.89 ⭐</div>
+        <div class="metric-subtext">Low rating triggered automated alert</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <span class="metric-label">Critical Pain Points</span>
+          <span class="metric-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">Action Needed</span>
+        </div>
+        <div id="metric-painpoints" class="metric-value">3</div>
+        <div class="metric-subtext">Clustered via LangChain Agent</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <span class="metric-label">Distribution</span>
+          <span class="metric-badge" style="background: var(--bg-subtle); color: var(--text-secondary);">1★ to 5★</span>
+        </div>
+        <div class="rating-bars">
+          <div class="rating-row">
+            <span>5★</span>
+            <div class="rating-bar-bg"><div id="star-5-fill" class="rating-bar-fill" style="width: 15%; background: #10b981;"></div></div>
+            <span id="star-5-pct">3</span>
+          </div>
+          <div class="rating-row">
+            <span>1★</span>
+            <div class="rating-bar-bg"><div id="star-1-fill" class="rating-bar-fill" style="width: 70%; background: #ef4444;"></div></div>
+            <span id="star-1-pct">13</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" data-tab="tab-themes">
+        🔥 Clustered Themes
+        <span class="tab-count">4</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-quotes">
+        💬 Verbatim Quotes
+        <span class="tab-count">3</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-actions">
+        🎯 Strategic Action Plan
+        <span class="tab-count">3</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-report">
+        📄 Weekly Pulse Report
+      </button>
+      <button class="tab-btn" data-tab="tab-console">
+        ⚙️ Pipeline Runner
+      </button>
+      <button class="tab-btn" data-tab="tab-mcp">
+        🔌 MCP Delivery Hub
+      </button>
+    </nav>
+
+    <!-- Tab 1: Themes -->
+    <div id="tab-themes" class="tab-content active">
+      <div id="themes-container" class="themes-grid">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+
+    <!-- Tab 2: Verbatim Quotes -->
+    <div id="tab-quotes" class="tab-content">
+      <div id="quotes-container" class="themes-grid">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+
+    <!-- Tab 3: Action Items -->
+    <div id="tab-actions" class="tab-content">
+      <div id="actions-container" class="actions-list">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+
+    <!-- Tab 4: Live Report Preview -->
+    <div id="tab-report" class="tab-content">
+      <div class="preview-container">
+        <div class="preview-toolbar">
+          <div class="preview-title">
+            <span>📊</span>
+            Generated Weekly Customer Pulse Note
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button id="view-html-btn" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">Rich HTML</button>
+            <button id="view-md-btn" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">Markdown</button>
+            <button id="copy-report-btn" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">📋 Copy MD</button>
+            <button id="download-report-btn" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">🔗 Open Tab</button>
+          </div>
+        </div>
+        <iframe id="preview-frame" class="preview-frame" src="/api/report/html"></iframe>
+        <pre id="markdown-view" class="markdown-view" style="display: none;"></pre>
+      </div>
+    </div>
+
+    <!-- Tab 5: Pipeline Console Runner -->
+    <div id="tab-console" class="tab-content">
+      <div class="console-grid">
+        <div class="pipeline-controls">
+          <h3 style="font-family: 'Outfit'; font-size: 1.15rem; margin-bottom: 8px;">Run Agent Phases</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">
+            Trigger individual pipeline phases or run the end-to-end pulse synthesis.
+          </p>
+
+          <button id="btn-run-p1" class="pipeline-btn">
+            <span class="pipeline-btn-title">📥 Phase 1: Scrape & Normalize</span>
+            <span class="pipeline-btn-desc">Fetch 7-day reviews from Google Play Store.</span>
+          </button>
+
+          <button id="btn-run-p2" class="pipeline-btn">
+            <span class="pipeline-btn-title">🧠 Phase 2: Agent Synthesis</span>
+            <span class="pipeline-btn-desc">ThemeClusterer, QuoteSelector, and ActionGenerator.</span>
+          </button>
+
+          <button id="btn-run-p3" class="pipeline-btn">
+            <span class="pipeline-btn-title">📝 Phase 3: Pulse Note Generation</span>
+            <span class="pipeline-btn-desc">Render responsive HTML and Markdown templates.</span>
+          </button>
+
+          <button id="btn-run-all" class="pipeline-btn" style="border-color: var(--accent-primary); background: rgba(99, 102, 241, 0.1);">
+            <span class="pipeline-btn-title" style="color: var(--accent-primary);">⚡ Run Full Pipeline (Phases 1-3)</span>
+            <span class="pipeline-btn-desc">Execute end-to-end automated synthesis.</span>
+          </button>
+        </div>
+
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <div class="terminal-dot dot-red"></div>
+              <div class="terminal-dot dot-yellow"></div>
+              <div class="terminal-dot dot-green"></div>
+            </div>
+            <span style="font-size: 0.8rem; font-family: monospace; color: var(--text-muted);">agent-orchestrator.log</span>
+            <span id="terminal-status" class="theme-badge positive">READY</span>
+          </div>
+          <div id="terminal-logs" class="terminal-logs">
+            <div class="log-entry">
+              <span class="log-time">></span>
+              <span>Autonomous MCP Agent initialized. Select a phase above to trigger.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 6: MCP Delivery Hub -->
+    <div id="tab-mcp" class="tab-content">
+      <div class="themes-grid">
+        <div class="theme-card">
+          <div class="theme-card-header">
+            <h3 class="theme-title">📄 Google Docs MCP Integration</h3>
+            <span class="theme-badge positive">Enabled</span>
+          </div>
+          <p class="theme-desc">
+            Automatically publishes the weekly digest into a shared team Google Drive folder with native heading styling and formatted quote callouts.
+          </p>
+          <div class="theme-quote-box">
+            Document URI: docs.google.com/document/d/groww-weekly-pulse-w37
+          </div>
+          <div class="theme-stats">
+            <span>Server: MCP-GoogleDocs</span>
+            <span>Auth: OAuth 2.0</span>
+          </div>
+        </div>
+
+        <div class="theme-card">
+          <div class="theme-card-header">
+            <h3 class="theme-title">✉️ Gmail Digest MCP Integration</h3>
+            <span class="theme-badge positive">Enabled</span>
+          </div>
+          <p class="theme-desc">
+            Dispatches responsive HTML newsletter to stakeholder distribution lists every Monday at 9:00 AM IST with delivery confirmation tracking.
+          </p>
+          <div class="theme-quote-box">
+            Recipients: product-leads@company.com, eng-directors@company.com
+          </div>
+          <div class="theme-stats">
+            <span>Server: MCP-Gmail</span>
+            <span>Delivery: Weekly Cron</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
