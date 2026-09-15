@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "google-tools-remote": {
+      "transport": "sse",
+      "url": "https://mcp-server-1-production-7ea1.up.railway.app/sse"
+    },
+    "google-tools-local": {
+      "command": "npx",
+      "args": ["-y", "google-tools-mcp-server"],
+      "env": {
+        "GOOGLE_CLIENT_ID": "${GOOGLE_CLIENT_ID}",
+        "GOOGLE_CLIENT_SECRET": "${GOOGLE_CLIENT_SECRET}",
+        "GOOGLE_REFRESH_TOKEN": "${GOOGLE_REFRESH_TOKEN}"
+      }
+    }
+  }
+}

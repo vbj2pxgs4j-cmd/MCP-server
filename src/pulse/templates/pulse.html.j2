@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Review Pulse — Groww</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrapper {
+      width: 100%;
+      table-layout: fixed;
+      background-color: #f8fafc;
+      padding: 30px 0;
+    }
+    .main-card {
+      background-color: #ffffff;
+      margin: 0 auto;
+      max-width: 640px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      padding: 32px 28px;
+      color: #ffffff;
+    }
+    .header-badge {
+      display: inline-block;
+      background-color: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      border: 1px solid rgba(147, 197, 253, 0.3);
+      margin-bottom: 12px;
+    }
+    .header h1 {
+      margin: 0 0 8px 0;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .header-meta {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+    .content {
+      padding: 28px;
+    }
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 28px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+    }
+    .section-title:first-child {
+      margin-top: 0;
+    }
+    .theme-card {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .theme-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 6px 0;
+    }
+    .theme-desc {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .quote-card {
+      background-color: #f1f5f9;
+      border-left: 4px solid #3b82f6;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+    }
+    .quote-text {
+      font-size: 13px;
+      font-style: italic;
+      color: #334155;
+      line-height: 1.5;
+      margin: 0 0 8px 0;
+    }
+    .quote-meta {
+      font-size: 12px;
+      font-weight: 600;
+      color: #64748b;
+      margin: 0;
+    }
+    .quote-rating {
+      color: #eab308;
+      font-weight: 700;
+    }
+    .action-card {
+      background-color: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #10b981;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+    }
+    .action-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 6px 0;
+    }
+    .action-desc {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .footer {
+      background-color: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      padding: 20px 28px;
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background-color:#f8fafc;color:#1e293b;">
+  <center class="wrapper" style="width:100%;table-layout:fixed;background-color:#f8fafc;padding:30px 0;">
+    <div class="main-card" style="background-color:#ffffff;margin:0 auto;max-width:640px;border-radius:12px;border:1px solid #e2e8f0;text-align:left;">
+      
+      <!-- Header -->
+      <div class="header" style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);padding:32px 28px;color:#ffffff;border-radius:12px 12px 0 0;">
+        <div class="header-badge" style="display:inline-block;background-color:rgba(59,130,246,0.2);color:#93c5fd;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;padding:4px 10px;border-radius:9999px;border:1px solid rgba(147,197,253,0.3);margin-bottom:12px;">
+          Weekly Pulse
+        </div>
+        <h1 style="margin:0 0 8px 0;font-size:24px;font-weight:700;color:#ffffff;">📊 Weekly Review Pulse</h1>
+        <div class="header-meta" style="font-size:14px;color:#94a3b8;line-height:1.5;">
+          <strong>Week of {{ week_start }} – {{ week_end }}</strong><br>
+          App: Groww (Google Play Store) &bull; Reviews analysed: <strong>{{ review_count }}</strong>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="content" style="padding:28px;">
+        
+        <!-- Top Themes Section -->
+        <h2 class="section-title" style="font-size:17px;font-weight:700;color:#0f172a;margin:0 0 16px 0;padding-bottom:8px;border-bottom:2px solid #f1f5f9;">
+          🔥 Top Themes
+        </h2>
+        {% for theme in top_themes %}
+        <div class="theme-card" style="background-color:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:16px;margin-bottom:12px;">
+          <h3 class="theme-title" style="font-size:15px;font-weight:600;color:#0f172a;margin:0 0 6px 0;">
+            {{ loop.index }}. {{ theme.name }}
+          </h3>
+          <p class="theme-desc" style="font-size:13px;color:#475569;line-height:1.5;margin:0;">
+            {{ theme.description[:500] }}
+          </p>
+        </div>
+        {% endfor %}
+
+        <!-- What Users Are Saying Section -->
+        <h2 class="section-title" style="font-size:17px;font-weight:700;color:#0f172a;margin:28px 0 16px 0;padding-bottom:8px;border-bottom:2px solid #f1f5f9;">
+          💬 What Users Are Saying
+        </h2>
+        {% for quote in quotes %}
+        <div class="quote-card" style="background-color:#f1f5f9;border-left:4px solid #3b82f6;border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:12px;">
+          <p class="quote-text" style="font-size:13px;font-style:italic;color:#334155;line-height:1.5;margin:0 0 8px 0;">
+            &ldquo;{{ quote.text[:300] }}&rdquo;
+          </p>
+          <p class="quote-meta" style="font-size:12px;font-weight:600;color:#64748b;margin:0;">
+            <span class="quote-rating" style="color:#eab308;font-weight:700;">★ {{ quote.rating }}/5</span> &bull; Theme: <em>{{ quote.theme }}</em>
+          </p>
+        </div>
+        {% endfor %}
+
+        <!-- Action Ideas Section -->
+        <h2 class="section-title" style="font-size:17px;font-weight:700;color:#0f172a;margin:28px 0 16px 0;padding-bottom:8px;border-bottom:2px solid #f1f5f9;">
+          🎯 Action Ideas
+        </h2>
+        {% for action in actions %}
+        <div class="action-card" style="background-color:#ffffff;border:1px solid #cbd5e1;border-left:4px solid #10b981;border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:12px;">
+          <h3 class="action-title" style="font-size:14px;font-weight:700;color:#0f172a;margin:0 0 6px 0;">
+            {{ loop.index }}. {{ action.title }}
+          </h3>
+          <p class="action-desc" style="font-size:13px;color:#475569;line-height:1.5;margin:0;">
+            {{ action.description }}
+          </p>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <!-- Footer -->
+      <div class="footer" style="background-color:#f8fafc;border-top:1px solid #e2e8f0;padding:20px 28px;text-align:center;font-size:12px;color:#94a3b8;border-radius:0 0 12px 12px;">
+        Generated automatically by the Weekly Pulse MCP Agent.
+      </div>
+    </div>
+  </center>
+</body>
+</html>

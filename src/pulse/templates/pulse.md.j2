@@ -1,0 +1,35 @@
+# 📊 Weekly Review Pulse
+**Week of {{ week_start }} – {{ week_end }}**
+*App: Groww (Google Play Store) | Reviews analysed: {{ review_count }}*
+
+---
+
+## 🔥 Top Themes
+
+{% for theme in top_themes %}
+### {{ loop.index }}. {{ theme.name }}
+{{ theme.description }}
+{% endfor %}
+
+---
+
+## 💬 What Users Are Saying
+
+{% for quote in quotes %}
+> "{{ quote.text }}"
+> — ⭐ {{ quote.rating }}/5 | Theme: *{{ quote.theme }}*
+
+{% endfor %}
+
+---
+
+## 🎯 Action Ideas
+
+{% for action in actions %}
+**{{ loop.index }}. {{ action.title }}**
+{{ action.description }}
+
+{% endfor %}
+
+---
+*Generated automatically by the Weekly Pulse MCP Agent.*
